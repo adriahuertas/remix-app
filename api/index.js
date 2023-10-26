@@ -225,7 +225,7 @@ __export(index_exports, {
   meta: () => meta
 });
 var import_jsx_dev_runtime3 = require("react/jsx-dev-runtime"), meta = () => [
-  { title: "New Remix App" },
+  { title: "Remix Demo App" },
   { name: "description", content: "Welcome to Remix!" }
 ];
 function Index() {
@@ -299,8 +299,26 @@ function Index() {
   }, this);
 }
 
+// app/routes/hello.tsx
+var hello_exports = {};
+__export(hello_exports, {
+  default: () => Hello
+});
+var import_jsx_dev_runtime4 = require("react/jsx-dev-runtime");
+function Hello() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { style: { fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("h1", { children: "Hello World" }, void 0, !1, {
+    fileName: "app/routes/hello.tsx",
+    lineNumber: 4,
+    columnNumber: 7
+  }, this) }, void 0, !1, {
+    fileName: "app/routes/hello.tsx",
+    lineNumber: 3,
+    columnNumber: 5
+  }, this);
+}
+
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-TQH4ZKZT.js", imports: ["/build/_shared/chunk-HLUL4A3T.js", "/build/_shared/chunk-4QJKEWZT.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-KGEGNC2U.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-OKJWF3PW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "88c12b88", hmr: void 0, url: "/build/manifest-88C12B88.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-TQH4ZKZT.js", imports: ["/build/_shared/chunk-HLUL4A3T.js", "/build/_shared/chunk-4QJKEWZT.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-KGEGNC2U.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-6KCIVEBS.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/hello": { id: "routes/hello", parentId: "root", path: "hello", index: void 0, caseSensitive: void 0, module: "/build/routes/hello-RI3MJM7O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "856374af", hmr: void 0, url: "/build/manifest-856374AF.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
@@ -319,6 +337,14 @@ var assetsBuildDirectory = "public/build", future = { v2_dev: !1, unstable_postc
     index: !0,
     caseSensitive: void 0,
     module: index_exports
+  },
+  "routes/hello": {
+    id: "routes/hello",
+    parentId: "root",
+    path: "hello",
+    index: void 0,
+    caseSensitive: void 0,
+    module: hello_exports
   }
 };
 // Annotate the CommonJS export names for ESM import in node:

@@ -1,8 +1,8 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { V2_MetaFunction } from "@remix-run/node";
 
-export const meta: MetaFunction = () => {
+export const meta: V2_MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "Remix Demo App" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };

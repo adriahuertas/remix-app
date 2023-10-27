@@ -1,5 +1,5 @@
 import { json, type LoaderArgs } from "@remix-run/node";
-import { Link } from "@remix-run/react";
+import { Link, Outlet } from "@remix-run/react";
 import { useLoaderData } from "react-router";
 
 export async function loader({ params }: LoaderArgs) {
@@ -48,6 +48,9 @@ export default function MovieId() {
             <span className="underline">Fecha de estreno:</span>{" "}
             {movie.release_date}
           </p>
+        </div>
+        <div className="w-1/2">
+          <Outlet />
         </div>
       </div>
     </div>

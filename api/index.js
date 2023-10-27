@@ -3,9 +3,6 @@ var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf, __hasOwnProp = Object.prototype.hasOwnProperty;
-var __commonJS = (cb, mod) => function() {
-  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
-};
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: !0 });
@@ -23,16 +20,6 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: !0 }) : target,
   mod
 )), __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: !0 }), mod);
-
-// css-bundle-update-plugin-ns:/home/adria/Extern/repos/remix-app/node_modules/@remix-run/css-bundle/dist/index.js
-var require_dist = __commonJS({
-  "css-bundle-update-plugin-ns:/home/adria/Extern/repos/remix-app/node_modules/@remix-run/css-bundle/dist/index.js"(exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: !0 });
-    var cssBundleHref2;
-    exports.cssBundleHref = cssBundleHref2;
-  }
-});
 
 // <stdin>
 var stdin_exports = {};
@@ -154,8 +141,14 @@ __export(root_exports, {
   default: () => App,
   links: () => links
 });
-var import_css_bundle = __toESM(require_dist()), import_react2 = require("@remix-run/react"), import_jsx_dev_runtime2 = require("react/jsx-dev-runtime"), links = () => [
-  ...import_css_bundle.cssBundleHref ? [{ rel: "stylesheet", href: import_css_bundle.cssBundleHref }] : []
+var import_react2 = require("@remix-run/react");
+
+// app/tailwind.css
+var tailwind_default = "/build/_assets/tailwind-YPKSJTGT.css";
+
+// app/root.tsx
+var import_jsx_dev_runtime2 = require("react/jsx-dev-runtime"), links = () => [
+  { rel: "stylesheet", href: tailwind_default }
 ];
 function App() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("html", { lang: "en", children: [
@@ -218,164 +211,22 @@ function App() {
   }, this);
 }
 
-// app/routes/dashboard._index.tsx
-var dashboard_index_exports = {};
-__export(dashboard_index_exports, {
-  default: () => DashboardIndex
-});
-var import_jsx_dev_runtime3 = require("react/jsx-dev-runtime");
-function DashboardIndex() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { style: { fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h1", { children: "Dashboard Index" }, void 0, !1, {
-    fileName: "app/routes/dashboard._index.tsx",
-    lineNumber: 4,
-    columnNumber: 7
-  }, this) }, void 0, !1, {
-    fileName: "app/routes/dashboard._index.tsx",
-    lineNumber: 3,
-    columnNumber: 5
-  }, this);
-}
-
-// app/routes/dashboard.sales.tsx
-var dashboard_sales_exports = {};
-__export(dashboard_sales_exports, {
-  default: () => SalesDashboard
-});
-var import_jsx_dev_runtime4 = require("react/jsx-dev-runtime");
-function SalesDashboard() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { style: { fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("h1", { children: "Sales Dashboard" }, void 0, !1, {
-    fileName: "app/routes/dashboard.sales.tsx",
-    lineNumber: 4,
-    columnNumber: 7
-  }, this) }, void 0, !1, {
-    fileName: "app/routes/dashboard.sales.tsx",
-    lineNumber: 3,
-    columnNumber: 5
-  }, this);
-}
-
-// app/routes/dashboard.$id.tsx
-var dashboard_id_exports = {};
-__export(dashboard_id_exports, {
-  default: () => DashboardId
-});
-var import_react3 = require("@remix-run/react"), import_jsx_dev_runtime5 = require("react/jsx-dev-runtime");
-function DashboardId() {
-  let { id } = (0, import_react3.useParams)();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { style: { fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h1", { children: [
-    "Dashboard Id ",
-    id
-  ] }, void 0, !0, {
-    fileName: "app/routes/dashboard.$id.tsx",
-    lineNumber: 7,
-    columnNumber: 7
-  }, this) }, void 0, !1, {
-    fileName: "app/routes/dashboard.$id.tsx",
-    lineNumber: 6,
-    columnNumber: 5
-  }, this);
-}
-
-// app/routes/dashboard.tsx
-var dashboard_exports = {};
-__export(dashboard_exports, {
-  default: () => Dashboard
-});
-var import_react4 = require("@remix-run/react"), import_jsx_dev_runtime6 = require("react/jsx-dev-runtime");
-function Dashboard() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { style: { fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }, children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("h1", { children: "Dashboard" }, void 0, !1, {
-      fileName: "app/routes/dashboard.tsx",
-      lineNumber: 6,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react4.Outlet, {}, void 0, !1, {
-      fileName: "app/routes/dashboard.tsx",
-      lineNumber: 7,
-      columnNumber: 7
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/routes/dashboard.tsx",
-    lineNumber: 5,
-    columnNumber: 5
-  }, this);
-}
-
 // app/routes/_index.tsx
 var index_exports = {};
 __export(index_exports, {
   default: () => Index,
   meta: () => meta
 });
-var import_jsx_dev_runtime7 = require("react/jsx-dev-runtime"), meta = () => [
+var import_jsx_dev_runtime3 = require("react/jsx-dev-runtime"), meta = () => [
   { title: "Remix Demo App" },
   { name: "description", content: "Welcome to Remix!" }
 ];
 function Index() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { style: { fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }, children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("h1", { children: "Welcome to Remix" }, void 0, !1, {
-      fileName: "app/routes/_index.tsx",
-      lineNumber: 13,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("ul", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
-        "a",
-        {
-          target: "_blank",
-          href: "https://remix.run/tutorials/blog",
-          rel: "noreferrer",
-          children: "15m Quickstart Blog Tutorial"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/routes/_index.tsx",
-          lineNumber: 16,
-          columnNumber: 11
-        },
-        this
-      ) }, void 0, !1, {
-        fileName: "app/routes/_index.tsx",
-        lineNumber: 15,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
-        "a",
-        {
-          target: "_blank",
-          href: "https://remix.run/tutorials/jokes",
-          rel: "noreferrer",
-          children: "Deep Dive Jokes App Tutorial"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/routes/_index.tsx",
-          lineNumber: 25,
-          columnNumber: 11
-        },
-        this
-      ) }, void 0, !1, {
-        fileName: "app/routes/_index.tsx",
-        lineNumber: 24,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { target: "_blank", href: "https://remix.run/docs", rel: "noreferrer", children: "Remix Docs" }, void 0, !1, {
-        fileName: "app/routes/_index.tsx",
-        lineNumber: 34,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "app/routes/_index.tsx",
-        lineNumber: 33,
-        columnNumber: 9
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/routes/_index.tsx",
-      lineNumber: 14,
-      columnNumber: 7
-    }, this)
-  ] }, void 0, !0, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { style: { fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h1", { className: "text-3xl font-bold underline", children: "Hello world!" }, void 0, !1, {
+    fileName: "app/routes/_index.tsx",
+    lineNumber: 13,
+    columnNumber: 7
+  }, this) }, void 0, !1, {
     fileName: "app/routes/_index.tsx",
     lineNumber: 12,
     columnNumber: 5
@@ -387,9 +238,9 @@ var hello_exports = {};
 __export(hello_exports, {
   default: () => Hello
 });
-var import_jsx_dev_runtime8 = require("react/jsx-dev-runtime");
+var import_jsx_dev_runtime4 = require("react/jsx-dev-runtime");
 function Hello() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { style: { fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("h1", { children: "Hello World" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { style: { fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("h1", { children: "Hello World" }, void 0, !1, {
     fileName: "app/routes/hello.tsx",
     lineNumber: 4,
     columnNumber: 7
@@ -401,10 +252,10 @@ function Hello() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-PD66332F.js", imports: ["/build/_shared/chunk-SR2CLQEI.js", "/build/_shared/chunk-4QJKEWZT.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-NPRFTZMY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-6KCIVEBS.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/dashboard": { id: "routes/dashboard", parentId: "root", path: "dashboard", index: void 0, caseSensitive: void 0, module: "/build/routes/dashboard-PKTCO76O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/dashboard.$id": { id: "routes/dashboard.$id", parentId: "routes/dashboard", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/dashboard.$id-W57KZLH7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/dashboard._index": { id: "routes/dashboard._index", parentId: "routes/dashboard", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/dashboard._index-XAW3ENCX.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/dashboard.sales": { id: "routes/dashboard.sales", parentId: "routes/dashboard", path: "sales", index: void 0, caseSensitive: void 0, module: "/build/routes/dashboard.sales-Z5N6F7UY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/hello": { id: "routes/hello", parentId: "root", path: "hello", index: void 0, caseSensitive: void 0, module: "/build/routes/hello-RI3MJM7O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "8cdaea6e", hmr: void 0, url: "/build/manifest-8CDAEA6E.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-UH5NFKT4.js", imports: ["/build/_shared/chunk-HLUL4A3T.js", "/build/_shared/chunk-4QJKEWZT.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-S7EXSQED.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-UIZA5BSL.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/hello": { id: "routes/hello", parentId: "root", path: "hello", index: void 0, caseSensitive: void 0, module: "/build/routes/hello-XYRA5JYP.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "336dd485", hmr: void 0, url: "/build/manifest-336DD485.js" };
 
 // server-entry-module:@remix-run/dev/server-build
-var assetsBuildDirectory = "public/build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
+var assetsBuildDirectory = "public\\build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
   root: {
     id: "root",
     parentId: void 0,
@@ -412,38 +263,6 @@ var assetsBuildDirectory = "public/build", future = { v2_dev: !1, unstable_postc
     index: void 0,
     caseSensitive: void 0,
     module: root_exports
-  },
-  "routes/dashboard._index": {
-    id: "routes/dashboard._index",
-    parentId: "routes/dashboard",
-    path: void 0,
-    index: !0,
-    caseSensitive: void 0,
-    module: dashboard_index_exports
-  },
-  "routes/dashboard.sales": {
-    id: "routes/dashboard.sales",
-    parentId: "routes/dashboard",
-    path: "sales",
-    index: void 0,
-    caseSensitive: void 0,
-    module: dashboard_sales_exports
-  },
-  "routes/dashboard.$id": {
-    id: "routes/dashboard.$id",
-    parentId: "routes/dashboard",
-    path: ":id",
-    index: void 0,
-    caseSensitive: void 0,
-    module: dashboard_id_exports
-  },
-  "routes/dashboard": {
-    id: "routes/dashboard",
-    parentId: "root",
-    path: "dashboard",
-    index: void 0,
-    caseSensitive: void 0,
-    module: dashboard_exports
   },
   "routes/_index": {
     id: "routes/_index",
@@ -471,18 +290,4 @@ var assetsBuildDirectory = "public/build", future = { v2_dev: !1, unstable_postc
   publicPath,
   routes
 });
-/*! Bundled license information:
-
-@remix-run/css-bundle/dist/index.js:
-  (**
-   * @remix-run/css-bundle v1.19.3
-   *
-   * Copyright (c) Remix Software Inc.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE.md file in the root directory of this source tree.
-   *
-   * @license MIT
-   *)
-*/
 //# sourceMappingURL=index.js.map

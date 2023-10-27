@@ -144,7 +144,7 @@ __export(root_exports, {
 var import_react2 = require("@remix-run/react");
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-IS6QIVQO.css";
+var tailwind_default = "/build/_assets/tailwind-C76AZNWC.css";
 
 // app/root.tsx
 var import_jsx_dev_runtime2 = require("react/jsx-dev-runtime"), links = () => [
@@ -245,13 +245,86 @@ var Layout = ({ children }) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDE
 // app/routes/movie.$id.comments.tsx
 var movie_id_comments_exports = {};
 __export(movie_id_comments_exports, {
-  default: () => Comments
+  default: () => Comments,
+  loader: () => loader
 });
+var import_node2 = require("@remix-run/node"), import_react3 = require("@remix-run/react");
+
+// app/utils/db.server.ts
+var import_client = require("@prisma/client"), db;
+global.__db__ || (global.__db__ = new import_client.PrismaClient()), db = global.__db__, db.$connect();
+
+// app/routes/movie.$id.comments.tsx
 var import_jsx_dev_runtime3 = require("react/jsx-dev-runtime");
+function loader({ params }) {
+  let data = db.comment.findMany({
+    where: {
+      movieId: params.id
+    },
+    orderBy: {
+      createdAt: "desc"
+    }
+  });
+  return (0, import_node2.json)({ data });
+}
 function Comments() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { children: "Hello" }, void 0, !1, {
+  let { id } = (0, import_react3.useParams)(), { data } = (0, import_react3.useLoaderData)();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "rounded-lg border p-3", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h1", { className: "text-xl font-semibold text-center mb-5", children: "Tu opini\xF3n" }, void 0, !1, {
+      fileName: "app/routes/movie.$id.comments.tsx",
+      lineNumber: 24,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react3.Form, { method: "POST", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("textarea", { name: "comment", className: "w-full border border-teal-500 rounded-lg p-2" }, void 0, !1, {
+          fileName: "app/routes/movie.$id.comments.tsx",
+          lineNumber: 27,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("input", { type: "hidden", name: "id", value: id }, void 0, !1, {
+          fileName: "app/routes/movie.$id.comments.tsx",
+          lineNumber: 28,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("button", { type: "submit", className: "bg-teal-500 px-4 py-2 rounded-lg text-white w-full", children: "Enviar" }, void 0, !1, {
+          fileName: "app/routes/movie.$id.comments.tsx",
+          lineNumber: 29,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/routes/movie.$id.comments.tsx",
+        lineNumber: 26,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "mt-5 flex flex-col gap-y-3", children: data.map((comment) => /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "flex flex-col gap-y-1", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("span", { className: "font-semibold", children: comment.user }, void 0, !1, {
+          fileName: "app/routes/movie.$id.comments.tsx",
+          lineNumber: 35,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("span", { children: comment.comment }, void 0, !1, {
+          fileName: "app/routes/movie.$id.comments.tsx",
+          lineNumber: 36,
+          columnNumber: 17
+        }, this)
+      ] }, comment.id, !0, {
+        fileName: "app/routes/movie.$id.comments.tsx",
+        lineNumber: 34,
+        columnNumber: 15
+      }, this)) }, void 0, !1, {
+        fileName: "app/routes/movie.$id.comments.tsx",
+        lineNumber: 31,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/movie.$id.comments.tsx",
+      lineNumber: 25,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
     fileName: "app/routes/movie.$id.comments.tsx",
-    lineNumber: 3,
+    lineNumber: 23,
     columnNumber: 5
   }, this);
 }
@@ -260,17 +333,17 @@ function Comments() {
 var movie_id_exports = {};
 __export(movie_id_exports, {
   default: () => MovieId,
-  loader: () => loader
+  loader: () => loader2
 });
-var import_node2 = require("@remix-run/node"), import_react3 = require("@remix-run/react"), import_react_router = require("react-router"), import_jsx_dev_runtime4 = require("react/jsx-dev-runtime");
-async function loader({ params }) {
+var import_node3 = require("@remix-run/node"), import_react4 = require("@remix-run/react"), import_react_router = require("react-router"), import_jsx_dev_runtime4 = require("react/jsx-dev-runtime");
+async function loader2({ params }) {
   let { id } = params, req = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, {
     headers: {
       accept: "application/json",
       Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YTU1ODI0NWIwNDM5NGE0YzhkYjQ4YTQ1NzI3NGE3NyIsInN1YiI6IjY1M2I3YTA0MTA5Y2QwMDEyY2ZlNGViYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.g_DVjeHhiLhioZ8i9gDwyerfJxdx-CXibkwDtkStRDI"
     }
   });
-  return (0, import_node2.json)(await req.json());
+  return (0, import_node3.json)(await req.json());
 }
 function MovieId() {
   let movie = (0, import_react_router.useLoaderData)();
@@ -304,7 +377,7 @@ function MovieId() {
             lineNumber: 32,
             columnNumber: 13
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_react3.Link, { to: movie.homepage, target: "_blank", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_react4.Link, { to: movie.homepage, target: "_blank", children: [
             " ",
             "Link"
           ] }, void 0, !0, {
@@ -361,7 +434,7 @@ function MovieId() {
         lineNumber: 30,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "w-1/2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_react3.Outlet, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "w-1/2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_react4.Outlet, {}, void 0, !1, {
         fileName: "app/routes/movie.$id.tsx",
         lineNumber: 53,
         columnNumber: 11
@@ -399,14 +472,14 @@ function oo_oo(i, ...v) {
 var index_exports = {};
 __export(index_exports, {
   default: () => Index,
-  loader: () => loader2,
+  loader: () => loader3,
   meta: () => meta
 });
-var import_node3 = require("@remix-run/node"), import_react4 = require("@remix-run/react"), import_jsx_dev_runtime5 = require("react/jsx-dev-runtime"), meta = () => [
+var import_node4 = require("@remix-run/node"), import_react5 = require("@remix-run/react"), import_jsx_dev_runtime5 = require("react/jsx-dev-runtime"), meta = () => [
   { title: "Remix Demo App" },
   { name: "description", content: "Welcome to Remix!" }
 ];
-async function loader2({}) {
+async function loader3({}) {
   let req = await fetch(
     "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
     {
@@ -416,10 +489,10 @@ async function loader2({}) {
       }
     }
   );
-  return (0, import_node3.json)(await req.json());
+  return (0, import_node4.json)(await req.json());
 }
 function Index() {
-  let movies = (0, import_react4.useLoaderData)().results;
+  let movies = (0, import_react5.useLoaderData)().results;
   return console.log(...oo_oo2("2981687559_0", movies)), /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "bg-white py-6 sm:py-8 lg:py-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "mx-auto max-w-screen-2xl px-4 md:px-8", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "mb-10 md:mb-16", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h2", { className: "mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl", children: "Top Trending Movies" }, void 0, !1, {
       fileName: "app/routes/_index.tsx",
@@ -431,7 +504,7 @@ function Index() {
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8", children: movies.map((movie) => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-col overflow-hidden rounded-lg border bg-white ", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react4.Link, { to: `/movie/${movie.id}/comments`, prefetch: "intent", className: "group relative block h-48 overflow-hidden bg-gray-100 md:h-64", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("img", { src: `https://image.tmdb.org/t/p/w500${movie.poster_path}`, alt: "Movie poster", className: "absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react5.Link, { to: `/movie/${movie.id}/comments`, prefetch: "intent", className: "group relative block h-48 overflow-hidden bg-gray-100 md:h-64", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("img", { src: `https://image.tmdb.org/t/p/w500${movie.poster_path}`, alt: "Movie poster", className: "absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" }, void 0, !1, {
         fileName: "app/routes/_index.tsx",
         lineNumber: 41,
         columnNumber: 19
@@ -441,7 +514,7 @@ function Index() {
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-1 flex-col p-4 sm:p-6", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h2", { className: "mb-2 text-lg font-semibold text-gray-800", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react4.Link, { to: `/movie/${movie.id}/comments`, prefetch: "intent", className: "transition duration-100 hover:text-indigo-500", children: movie.title }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h2", { className: "mb-2 text-lg font-semibold text-gray-800", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react5.Link, { to: `/movie/${movie.id}/comments`, prefetch: "intent", className: "transition duration-100 hover:text-indigo-500", children: movie.title }, void 0, !1, {
           fileName: "app/routes/_index.tsx",
           lineNumber: 45,
           columnNumber: 21
@@ -512,7 +585,7 @@ function Hello() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-3U7JRRHX.js", imports: ["/build/_shared/chunk-7QOAV5GK.js", "/build/_shared/chunk-4QJKEWZT.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-TMMIAZ7M.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-GC66O4FW.js", imports: ["/build/_shared/chunk-FFHBG6Q3.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/hello": { id: "routes/hello", parentId: "root", path: "hello", index: void 0, caseSensitive: void 0, module: "/build/routes/hello-XYRA5JYP.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie.$id": { id: "routes/movie.$id", parentId: "root", path: "movie/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/movie.$id-7KJB7QY5.js", imports: ["/build/_shared/chunk-FFHBG6Q3.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie.$id.comments": { id: "routes/movie.$id.comments", parentId: "routes/movie.$id", path: "comments", index: void 0, caseSensitive: void 0, module: "/build/routes/movie.$id.comments-Z2TUH7ON.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "e14aa2d9", hmr: void 0, url: "/build/manifest-E14AA2D9.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-RH6BLRPL.js", imports: ["/build/_shared/chunk-4RYOEMMX.js", "/build/_shared/chunk-4QJKEWZT.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-SXZCQI77.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-T2JSK4XP.js", imports: ["/build/_shared/chunk-FFHBG6Q3.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/hello": { id: "routes/hello", parentId: "root", path: "hello", index: void 0, caseSensitive: void 0, module: "/build/routes/hello-XYRA5JYP.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie.$id": { id: "routes/movie.$id", parentId: "root", path: "movie/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/movie.$id-SGV6YZER.js", imports: ["/build/_shared/chunk-FFHBG6Q3.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie.$id.comments": { id: "routes/movie.$id.comments", parentId: "routes/movie.$id", path: "comments", index: void 0, caseSensitive: void 0, module: "/build/routes/movie.$id.comments-2NVTQH4M.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "d8f67b06", hmr: void 0, url: "/build/manifest-D8F67B06.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public\\build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

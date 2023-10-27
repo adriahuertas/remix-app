@@ -1,5 +1,6 @@
 import type { LinksFunction } from "@remix-run/node";
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -7,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import type { ReactNode } from "react";
 import stylesheet from "~/tailwind.css";
 
 export const links: LinksFunction = () => [
@@ -23,11 +25,26 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
+        <Layout>
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+        </Layout>
       </body>
     </html>
   );
+}
+
+const Layout = ({ children }: { children: ReactNode }) => {
+  return (
+    <>
+      <nav>
+        <Link to="/" prefetch="intent" className="text-2xl font-semibold">
+          Move<span className="text-teal-500">DB</span>
+        </Link>
+      </nav>
+      <main>{children}</main>
+    </>
+  )
 }

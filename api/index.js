@@ -283,7 +283,7 @@ async function action({ request }) {
   return (0, import_node2.json)({ data });
 }
 function Comments() {
-  let { id } = (0, import_react3.useParams)(), { data } = (0, import_react3.useLoaderData)(), busy = (0, import_react3.useTransition)().submission, formRef = (0, import_react4.useRef)(null), readableDateWithTime = (/* @__PURE__ */ new Date()).toLocaleDateString("es-ES", {
+  let { id } = (0, import_react3.useParams)(), { data } = (0, import_react3.useLoaderData)(), busy = (0, import_react3.useTransition)().state === "submitting", formRef = (0, import_react4.useRef)(null), readableDateWithTime = (/* @__PURE__ */ new Date()).toLocaleDateString("es-ES", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -311,7 +311,7 @@ function Comments() {
           lineNumber: 67,
           columnNumber: 11
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("button", { type: "submit", className: "bg-teal-500 px-4 py-2 rounded-lg text-white w-full", children: busy ? "Enviando..." : "Enviar comentario" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("button", { type: "submit", disabled: busy, className: "bg-teal-500 px-4 py-2 rounded-lg text-white w-full", children: busy ? "Enviando..." : "Enviar comentario" }, void 0, !1, {
           fileName: "app/routes/movie.$id.comments.tsx",
           lineNumber: 68,
           columnNumber: 11
@@ -588,7 +588,7 @@ function Hello() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-RJKUFW3E.js", imports: ["/build/_shared/chunk-L33IDGYL.js", "/build/_shared/chunk-4QJKEWZT.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-IRRFZ3C7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-XKVFIU6E.js", imports: ["/build/_shared/chunk-FFHBG6Q3.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/hello": { id: "routes/hello", parentId: "root", path: "hello", index: void 0, caseSensitive: void 0, module: "/build/routes/hello-RI3MJM7O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie.$id": { id: "routes/movie.$id", parentId: "root", path: "movie/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/movie.$id-NPJ77WOJ.js", imports: ["/build/_shared/chunk-FFHBG6Q3.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie.$id.comments": { id: "routes/movie.$id.comments", parentId: "routes/movie.$id", path: "comments", index: void 0, caseSensitive: void 0, module: "/build/routes/movie.$id.comments-QFO6SPDY.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "202f4e05", hmr: void 0, url: "/build/manifest-202F4E05.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-RJKUFW3E.js", imports: ["/build/_shared/chunk-L33IDGYL.js", "/build/_shared/chunk-4QJKEWZT.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-IRRFZ3C7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-XKVFIU6E.js", imports: ["/build/_shared/chunk-FFHBG6Q3.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/hello": { id: "routes/hello", parentId: "root", path: "hello", index: void 0, caseSensitive: void 0, module: "/build/routes/hello-RI3MJM7O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie.$id": { id: "routes/movie.$id", parentId: "root", path: "movie/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/movie.$id-NPJ77WOJ.js", imports: ["/build/_shared/chunk-FFHBG6Q3.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie.$id.comments": { id: "routes/movie.$id.comments", parentId: "routes/movie.$id", path: "comments", index: void 0, caseSensitive: void 0, module: "/build/routes/movie.$id.comments-MVPYQ5GY.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "97d79345", hmr: void 0, url: "/build/manifest-97D79345.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

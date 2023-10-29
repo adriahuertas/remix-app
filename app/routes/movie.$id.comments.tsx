@@ -41,7 +41,7 @@ export default function Comments() {
   const { id } = useParams()
   const { data } = useLoaderData<typeof loader>()
   let transition = useTransition()
-  let busy = transition.submission
+  let busy = transition.state === "submitting"
   const formRef = useRef<HTMLFormElement>(null)
 
   const readableDateWithTime = new Date().toLocaleDateString('es-ES', {
@@ -65,7 +65,7 @@ export default function Comments() {
         <Form method="POST" ref={formRef}>
           <textarea name="comment" className="w-full border border-teal-500 rounded-lg p-2"></textarea>
           <input type="hidden" name="id" value={id} />
-          <button type="submit" className="bg-teal-500 px-4 py-2 rounded-lg text-white w-full">
+          <button type="submit" disabled={busy} className="bg-teal-500 px-4 py-2 rounded-lg text-white w-full">
             {busy ? "Enviando..." : "Enviar comentario"}
           </button>
         </Form>

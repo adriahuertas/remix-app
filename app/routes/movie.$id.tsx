@@ -16,9 +16,8 @@ export async function loader({ params }: LoaderArgs) {
 
 export default function MovieId() {
   const movie: any = useLoaderData()
-  console.log(movie)
   return (
-    <div className="min-h-screen p-10">
+    <div className="min-h-screen p-10 max-w-7xl mx-auto">
       <img
         src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
         alt="Movie poster"
@@ -26,8 +25,8 @@ export default function MovieId() {
       />
       <h1 className="text-4xl font-bold text-center pt-5">{movie.title}</h1>
 
-      <div className="flex gap-x-10 mt-10">
-        <div className="w-1/2 font-semibold">
+      <div className="flex flex-col md:flex-row gap-x-10 gap-y-10 mt-10">
+        <div className="w-full md:w-1/2 font-semibold">
           <p>
             <span className="underline">
               Homepage:
@@ -49,7 +48,7 @@ export default function MovieId() {
             {movie.release_date}
           </p>
         </div>
-        <div className="w-1/2">
+        <div className="w-full md:w-1/2">
           <Outlet />
         </div>
       </div>
